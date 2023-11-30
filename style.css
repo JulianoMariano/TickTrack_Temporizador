@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+    --hue: 194;
+    --bg-body-color: hsl(var(--hue), 5%, 7%);
+    
+    --timer-color: hsl(var(--hue),40%, 988%);
+    
+    --bg-controls-color: hsl(var(--hue), 40%, 98%);
+    --controls-color: hsl(var(--hue), 0%, 14%);
+    
+    --bg-cards-color: hsl(var(--hue), 40%, 98%);
+    --cards-color: hsl(var(--hue), 0%, 14%);
+}
+
+html.light {
+    --bg-body-color: hsl(var(--hue),40%, 98%);
+    
+    --timer-color: hsl(var(--hue), 5%, 7%);
+    
+    --bg-controls-color: hsl(var(--hue), 0%, 14%);
+    --controls-color: hsl(var(--hue), 40%, 98%);
+    
+    --bg-cards-color: hsl(var(--hue), 0%, 14%);
+    --cards-color: hsl(var(--hue), 40%, 98%);
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon-stars {
+    display: none;
+}
+
+#toggle-mode {
+    position: absolute;
+    right: 3.2rem;
+    top: 3.2rem;
+    font-size: 4rem;
+    line-height: 0;
+
+    color: var(--timer-color);
+}
+
+.sr-only {
+    width: .1rem;
+    height: .1rem;
+    position: absolute;
+    overflow: hidden;
+}
+
+body {
+    background-color: var(--bg-body-color);
+    color: var(--text-color);
+
+    display: grid;
+    height: 100vh;
+
+    place-content: center;
+}
+
+#app {
+    display: grid;
+    justify-items: center;
+    width: clamp(30rem, 15rem + 45vw, 80rem);
+    height: clamp(20rem, 26rem + 40vh, 76rem);
+
+    /* position: relative; */
+    /* justify-content: space-between; */
+    justify-items: center;
+    padding: 2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+#timer {
+    /* font-size: 9.6rem; */
+    font-weight: bold;
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+
+    /* margin-top: 4rem; */
+
+    width: clamp(25rem, 5rem + 18vw, 80rem);
+    font-size: clamp(6rem, 11rem, 12.6rem);
+
+    color: var(--timer-color);
+
+    animation: topdown 1500ms 400ms forwards;
+}
+
+#controls {
+    margin-top: 5rem;
+    /* margin-bottom: 5rem; */
+    padding: 2rem;
+    gap: 1.6rem;
+    background-color: var(--bg-controls-color);
+    border-radius: 999rem;
+
+    justify-items: center;
+}
+
+#cards {
+    grid-template-columns: 0fr 0fr;
+    /* position: absolute;
+    right: 0rem;
+    top: 0rem; */
+    gap: 2rem;
+
+    width: clamp(25rem, 30rem, 80rem);
+
+    justify-content: center;
+    margin-top: 7rem;
+}
+
+#cards button {
+    padding: 5rem 4rem;
+    gap: 1.6rem;
+    background-color: var(--bg-cards-color);
+    color: var(--cards-color);
+
+    border-radius: 1rem;
+
+    animation: downtop 1500ms 350ms forwards;
+}
+
+button {
+    color: var(--cards-color);
+    background-color: transparent;
+    border: 0;
+
+    cursor: pointer;
+
+    font-size: 6.4rem;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    transition: all 0.3s;
+}
+
+button:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+button:before {
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+button:active{    
+    top: .4rem;
+}
+
+button:hover{
+    transform: scale(1.2);
+}
+
+/* controls */
+.running .ph-play,
+.running .ph-clock-countdown,
+.music-on,
+html:not(.running) .ph-pause,
+html:not(.running) .ph-stop {
+    display: none;
+}
+
+.hide {
+display: none;
+}
+
+.bg-forest, .bg-campfire, .bg-coffeshop, .bg-rainstorn {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+@keyframes topdown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+  
+@keyframes downtop {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}

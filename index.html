@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Temporizador estilo pomodoro">
+
+        <title>TickTrack - Temporizador</title>
+
+        <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+
+        <script type="module" src="./src/main.js" defer></script>
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+
+    </head>
+    <body>
+        <div id="app">
+
+            <button id="toggle-mode">
+                <span class="sr-only">Ativar ligth mode</span>
+                <i class="ph-bold ph-sun"></i>
+                
+                <i class="ph-bold ph-moon-stars"></i>
+            </button>
+
+            <section id="timer" class="flex">
+                <span id="minutes">25</span>
+                <span>:</span>
+                <span id="seconds">00</span>
+            </section>
+            
+            <section id="controls" class="flex">
+                <button
+                    data-action="toggleRunning" 
+                    class="ph ph-play">
+                    <span class="sr-only">Iniciar o contador</span>
+                </button>
+                
+                <button 
+                    data-action="toggleRunning"
+                    class="ph ph-pause">
+                    <span class="sr-only">Pausar o contador</span>
+                </button>
+                
+                <button 
+                    data-action="set"
+                    class="ph ph-clock-countdown">
+                    <span class="sr-only">Selecionar tempo para o contador</span>
+                </button>
+                
+                <button 
+                    data-action="reset"
+                    class="ph ph-stop">
+                    <span class="sr-only">Parar/ resetar o contador</span>
+                </button>
+                
+                <button 
+                    data-action="increaseTheCount"
+                    class="ph ph-plus-circle">
+                    <span class="sr-only">Aumentar tempo do contador</span>
+                </button>
+                
+                <button 
+                    data-action="decreaseTheCount"
+                    class="ph ph-minus-circle">
+                    <span class="sr-only">Diminuir tempo do contador</span>
+                </button>
+            </section>
+            
+            <section id="cards" class="grid">
+                <button 
+                    data-action="ModeForest" 
+                    class="ph ph-tree"> 
+                    <span class="sr-only">Ativar/ desativar sons e background de floresta</span>
+                </button>
+                
+                <button 
+                    data-action="ModeCampfire" 
+                    class="ph ph-campfire">
+                    <span class="sr-only">Ativar/ Desativar sons e background de acampamento</span>
+                </button>
+                
+                <button
+                    data-action="ModeLightning"
+                    class="ph ph-cloud-lightning">
+                    <span class="sr-only">Ativar/ Desativar sons e background de tempestade</span>
+                </button>
+                
+                <button
+                    data-action="ModeStorefront"
+                    class="ph ph-storefront">
+                    <span class="sr-only">Ativar/ Desativar sons e background de cafeteria</span>
+                </button>
+            </section>
+
+            <img
+                id="bg-forest"  
+                src="./assets/bg-forest.jpg"
+                alt="floresta vazia"
+                class="bg-forest hide" 
+            />
+
+            <img
+                id="bg-campfire"
+                src="./assets/bg-campfire.jpg" alt="Fogueira"
+                class="bg-campfire hide"
+            />
+            
+            <img
+                id="bg-coffeshop"
+                src="./assets/bg-coffeshop.jpg" alt="Fachada de uma loja"
+                class="bg-coffeshop hide"
+            />
+            
+            <img
+                id="bg-rainstorn"
+                src="./assets/bg-rainstorn.jpg" alt="Nuvem com raio"
+                class="bg-rainstorn hide"
+            />
+
+
+        </div>
+    </body>
+</html>
