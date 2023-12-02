@@ -14,7 +14,8 @@ O temporizador foi uma aplicação proposta pela RocketSeat no programa de forma
 <br>
 
 <p align="center">
-  <video alt="projeto" src="./assets/tricktrack em funcionamento.mp4" width="30%">
+  <img alt="projeto " src="./assets/readme1.jpg" width="30%">
+  <img alt="projeto " src="./assets/readme2.jpg" width="30%">
 </p>
 
 ## 🚀 Tecnologias
